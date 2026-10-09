@@ -3,7 +3,7 @@
   "mcpServers": {
     "ops-patient-1": {
       "type": "streamable-http",
-      "url": "https://mcp.example.com/mcp"
+      "url": "https://ops-patient-1.onrender.com/mcp"
     }
   }
 }
