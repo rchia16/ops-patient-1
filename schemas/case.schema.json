@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "case_id",
+    "profile",
+    "images_linked"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "case_notes": {
+      "type": "string",
+      "maxLength": 30000
+    },
+    "profile": {
+      "type": "object",
+      "required": [
+        "history",
+        "examination"
+      ],
+      "properties": {
+        "history": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "presenting_complaint": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "past_ocular_history": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "general_health": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "family_history": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "social_history": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "allergies": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "age": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 130
+            },
+            "sex": {
+              "type": "string",
+              "enum": [
+                "M",
+                "F",
+                "X",
+                "U"
+              ]
+            },
+            "medications": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 20000
+              }
+            },
+            "history_of_presenting_illness": {
+              "type": "object",
+              "properties": {
+                "onset": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "symptom_progression": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "associated_symptoms": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "laterality": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "chronic_context": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "examination": {
+          "type": "object",
+          "properties": {
+            "pupils": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "anterior_segment_gonio": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "iop": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "cct": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "fundus": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "perimetry": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "oct": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "visual_acuity": {
+              "type": "object",
+              "properties": {
+                "RE": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                },
+                "LE": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 20000
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "images_linked": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "eye",
+          "test",
+          "filename",
+          "description"
+        ],
+        "properties": {
+          "eye": {
+            "type": "string",
+            "enum": [
+              "right",
+              "left",
+              "both"
+            ]
+          },
+          "test": {
+            "type": "string",
+            "enum": [
+              "None",
+              "Fundus image"
+            ]
+          },
+          "filename": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+\\.png$",
+            "maxLength": 150
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 20000
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": true
+}

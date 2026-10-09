@@ -1,0 +1,58 @@
+{
+  "files": [
+    {
+      "original": "patient_1.json",
+      "package_path": "data/patient_1.json",
+      "sha256": "00bbce3682e3e9850ac4341d380e44ed94e59f267d5ae02cff2f3fd64ba284fb",
+      "bytes": 6072
+    },
+    {
+      "original": "1.png",
+      "package_path": "data/images/1.png",
+      "sha256": "812035b4ed3dbd16884d297f0282478f9c74f418ee846761a810df0b96071b6e",
+      "bytes": 342495
+    },
+    {
+      "original": "1_left.png",
+      "package_path": "data/images/1_left.png",
+      "sha256": "ff28a430cddfa2fb054ef968fa0635bf6d25c376c4119bacb451f2f6bc044bc3",
+      "bytes": 292808
+    },
+    {
+      "original": "1_right.png",
+      "package_path": "data/images/1_right.png",
+      "sha256": "6426d4c0d96cedfff0436c3f68d65a93a337c442d660234fa0948534ecc1b421",
+      "bytes": 281236
+    },
+    {
+      "original": "ACI-Eye-Emergency-Manual.pdf",
+      "package_path": "data/feedback/ACI-Eye-Emergency-Manual.pdf",
+      "sha256": "c390841d6e6c826c1bd835588bcaa9d51bf590376ffe15d0c92647ac73a16671",
+      "bytes": 2252375
+    },
+    {
+      "original": "evaluate(1).md",
+      "package_path": "data/feedback/evaluate.md",
+      "sha256": "21d352b85af941217dfebd6800f36aa0180a7c1660c785dee12b4c8b2b9118e3",
+      "bytes": 10247
+    },
+    {
+      "original": "instructions.md",
+      "package_path": "source-originals/instructions.md",
+      "sha256": "f73f9f4d81f1d0eb96d5b24660d8df15148b73f2fec4d7b1012a29d05884758f",
+      "bytes": 8215
+    },
+    {
+      "original": "openai.yaml",
+      "package_path": "source-originals/openai.yaml",
+      "sha256": "9fd2317e47f150c061a2360e211d4af8911b3820a7d7f77515817683dd7fb191",
+      "bytes": 169
+    },
+    {
+      "original": "knowledge-index.json",
+      "package_path": "source-originals/knowledge-index.json",
+      "sha256": "d8d2dde1536249aa005f45d18168ff0752141ff5787956e28bc0b7bfa47bf4e4",
+      "bytes": 532
+    }
+  ]
+}

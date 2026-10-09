@@ -1,0 +1,271 @@
+[
+  {
+    "name": "load_case",
+    "description": "Parse and validate authoritative JSON and image references, check conflicts, create one active case in the server conversation context. Routing id is internal.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "case_id"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_patient_fact",
+    "description": "Return a canonical history template and session-bound evidence. field is identity or an allowed history path. Never access hidden metadata.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "session_id",
+        "field"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9-]{36}$"
+        },
+        "field": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_test_result",
+    "description": "Return a single [NURSE] result from examination only. For linked tests retrieve image before validating/showing. Eye is mandatory.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "session_id",
+        "test",
+        "eye"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9-]{36}$"
+        },
+        "test": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "eye": {
+          "type": "string",
+          "enum": [
+            "right",
+            "left",
+            "both",
+            "RE",
+            "LE",
+            "OD",
+            "OS",
+            "OU"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_linked_image",
+    "description": "Return actual MCP PNG image content with canonical result/cue; persist returned-to-host disclosure state. No image interpretation or descriptions.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "session_id",
+        "test",
+        "eye"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9-]{36}$"
+        },
+        "test": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "eye": {
+          "type": "string",
+          "enum": [
+            "right",
+            "left",
+            "both",
+            "RE",
+            "LE",
+            "OD",
+            "OS",
+            "OU"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "record_interaction",
+    "description": "Persist user/assistant turn. Assistant active-role text must validate. Only explicit feedback requests logged as USER after end unlock evaluation. Host must ensure actor provenance.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "session_id",
+        "interaction"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9-]{36}$"
+        },
+        "interaction": {
+          "type": "object",
+          "required": [
+            "actor",
+            "text"
+          ],
+          "properties": {
+            "actor": {
+              "type": "string",
+              "enum": [
+                "user",
+                "assistant"
+              ]
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 20000
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-f0-9-]{36}$"
+              },
+              "maxItems": 10
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "validate_response",
+    "description": "Verify exact evidence-bound templates before display; arbitrary paraphrases are unverifiable, never silently approved. Evidence must belong to the session.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "session_id",
+        "proposed_response",
+        "evidence_refs"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9-]{36}$"
+        },
+        "proposed_response": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20000
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-f0-9-]{36}$"
+          },
+          "maxItems": 10
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "end_case",
+    "description": "End role-play idempotently; never automatically evaluate. Can end even when case source is unavailable.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "session_id"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9-]{36}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "evaluate_case",
+    "description": "Release evaluator, case, ordered log and relevant manual pages only after end plus explicit logged user request. Returns feedback context, not generated feedback or a PDF.",
+    "inputSchema": {
+      "type": "object",
+      "required": [
+        "session_id"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9-]{36}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "openWorldHint": false
+    }
+  }
+]

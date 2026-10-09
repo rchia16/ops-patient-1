@@ -1,0 +1,33 @@
+# Source-only Render Blueprint. Review plan names and costs before creating resources.
+services:
+  - type: web
+    name: ops-patient-1-mcp
+    runtime: docker
+    region: singapore
+    plan: starter
+    healthCheckPath: /health
+    autoDeployTrigger: "off"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ops-patient-1-db
+          property: connectionString
+      - key: OPS_PUBLIC_URL
+        sync: false
+      - key: AUTH0_ISSUER_URL
+        sync: false
+      - key: AUTH0_AUDIENCE
+        sync: false
+      - key: AUTH0_JWKS_URL
+        sync: false
+      - key: OPS_REQUIRED_SCOPE
+        value: simulation:use
+      - key: OPENAI_APPS_CHALLENGE
+        sync: false
+
+databases:
+  - name: ops-patient-1-db
+    region: singapore
+    plan: basic-256mb
+    databaseName: ops_patient_1
+    user: ops_patient_1

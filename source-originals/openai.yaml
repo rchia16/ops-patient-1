@@ -1,0 +1,5 @@
+interface:
+  default_prompt: Start a new case
+  display_name: Patient 1 Main
+  short_description: Ophthalmology patient role‑play simulator using Drive cases +
+    AC

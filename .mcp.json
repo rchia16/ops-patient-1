@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ops-patient-1": {
+      "type": "streamable-http",
+      "url": "https://mcp.example.com/mcp"
+    }
+  }
+}

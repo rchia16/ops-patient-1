@@ -1,0 +1,4 @@
+interface:
+  display_name: OPS Patient 1
+  short_description: Eye patient simulator
+  default_prompt: Start OPS Patient 1

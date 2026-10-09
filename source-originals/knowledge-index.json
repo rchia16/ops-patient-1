@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "name": "1.png",
+      "path": "references/1.png"
+    },
+    {
+      "name": "1_left.png",
+      "path": "references/1_left.png"
+    },
+    {
+      "name": "1_right.png",
+      "path": "references/1_right.png"
+    },
+    {
+      "name": "ACI-Eye-Emergency-Manual.pdf",
+      "path": "references/ACI-Eye-Emergency-Manual.pdf"
+    },
+    {
+      "name": "evaluate.md",
+      "path": "references/evaluate.md"
+    },
+    {
+      "name": "patient_1.json",
+      "path": "references/patient_1.json"
+    }
+  ]
+}

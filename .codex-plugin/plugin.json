@@ -1,0 +1,23 @@
+{
+  "interface": {
+    "capabilities": [
+      "Interactive"
+    ],
+    "category": "Education",
+    "defaultPrompt": "Start OPS Patient 1",
+    "developerName": "Account Two",
+    "displayName": "OPS Patient 1",
+    "longDescription": "Patient role skill plus an authenticated remote MCP service. Deployment and a real endpoint are required before connection. Clinical feedback is opt-in after the session ends.",
+    "shortDescription": "Eye patient simulator"
+  },
+  "name": "ops-patient-1",
+  "version": "1.2.0",
+  "description": "Private deterministic ophthalmology patient simulation with source validation, persistent session events and gated post-session feedback.",
+  "author": {
+    "name": "Account Two",
+    "email": "eyebotacc2@outlook.com"
+  },
+  "keywords": [],
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json"
+}

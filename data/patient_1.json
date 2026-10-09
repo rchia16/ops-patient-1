@@ -1,0 +1,112 @@
+{
+  "case_id": "glaucoma_aacg_severe_re",
+  "category": "Glaucoma",
+  "complexity": "severe",
+  "setting": "Emergency / glaucoma clinic",
+  "diagnosis": "Right eye: Acute primary angle-closure glaucoma (severe); Left eye: Advanced open-angle glaucoma",
+  "images_linked": [
+    {
+      "eye": "both",
+      "test": "None",
+      "description": "Normal picture of both eyes",
+      "filename": "1.png"
+    },
+    {
+      "eye": "right",
+      "test": "Fundus image",
+      "description": "",
+      "filename": "1_right.png"
+    },
+    {
+      "eye": "left",
+      "test": "Fundus image",
+      "description": "",
+      "filename": "1_left.png"
+    }
+  ],
+  "profile": {
+    "history": {
+      "name": "EF",
+      "sex": "M",
+      "age": 65,
+      "presenting_complaint": "Severe headache and haloes around lights for one day, with very blurry vision in the right eye and associated nausea.",
+      "history_of_presenting_illness": {
+        "onset": "Acute, 1-day duration.",
+        "symptom_progression": "Severe headache, haloes, and blurred vision worsening throughout the day.",
+        "associated_symptoms": "Nausea, photophobia, mild vomiting; no trauma.",
+        "laterality": "Right eye primarily affected.",
+        "chronic_context": "Known glaucoma for several years with variable adherence to medications."
+      },
+      "past_ocular_history": "No ocular surgery. Mild cataract noted previously.",
+      "general_health": "Cardiovascular risk factors present; otherwise well.",
+      "family_history": "Brother diagnosed with glaucoma.",
+      "social_history": "Retired individual; mild falls risk at home.",
+      "medications": ["Latanoprost", "Timolol (inconsistent use)"],
+      "allergies": "NKDA"
+    },
+    "examination": {
+      "visual_acuity": {
+        "RE": "6/38 (no improvement with pinhole)",
+        "LE": "6/12 → 6/9 with pinhole"
+      },
+      "pupils": "Right pupil sluggish and mid-dilated (~4.5 mm); left 2 mm, reactive.",
+      "anterior_segment_gonio": "RE: closed angles; LE: open to 3–4 quadrants; OU: mild nuclear sclerosis.",
+      "iop": "RE 55 mmHg / LE 20 mmHg (on medication)",
+      "cct": "495 µm (RE) / 500 µm (LE)",
+      "fundus": "RE cup-to-disc ratio 0.9 with diffuse rim loss and disc haemorrhage; LE C/D 0.8 with rim thinning.",
+      "perimetry": "HVF mean deviation -18 dB both eyes (marked constriction), results align with fundus and OCT findings.",
+      "oct": "RNFL thinning"
+    }
+  },
+  "plan_summary": "Urgent treatment of right eye acute angle-closure: topical timolol, brimonidine, dorzolamide; oral acetazolamide 500 mg stat then 250 mg QID; topical prednisolone acetate 1%; pilocarpine once IOP reduced; IV mannitol if refractory. Perform laser peripheral iridotomy (LPI) RE within 24–48 h; consider prophylactic LPI LE. Long-term: fixed-combination drops, possible SLT for LE, and trabeculectomy or tube shunt RE if control inadequate. Advise avoidance of mydriatics and close follow-up with target low IOP.",
+  "case_notes": "65M; 1-day severe headache, haloes, nausea; RE very blurry; inconsistent latanoprost/timolol; cardiovascular risk factors; FHx brother with glaucoma. VA 6/38 RE (no pinhole improvement), LE 6/12→6/9; pupil RE sluggish 4.5 mm; gonio: RE closed, LE 3–4; IOP 55/20 (GAT); CCT 495/500 µm; discs: C/D 0.9 RE, 0.8 LE, rim loss, haemorrhage RE; HVF MD −18 dB OU; OCT RNFL thin. Dx: RE acute PAC on severe glaucoma; LE advanced OAG. Treat RE urgently, LPI RE, prophylactic LPI LE, consider surgery if control poor.",
+  "required_skills": {
+    "history_taking": [
+      "Chief Complaint and associated systemic symptoms (headache, haloes, nausea)",
+      "Onset and time course of visual symptoms",
+      "Red-Flag Screen: severe eye pain, haloes, vomiting, decreased VA, photophobia",
+      "Past ocular and systemic history including medication adherence",
+      "Family history of glaucoma",
+      "Medication and allergy review"
+    ],
+    "examination": [
+      "Visual Acuity (with and without pinhole)",
+      "Pupils and RAPD",
+      "Gonioscopy to assess angle closure",
+      "Slit-lamp: corneal clarity, anterior chamber depth, lens status",
+      "IOP measurement (Goldmann applanation)",
+      "Dilated fundus exam: optic disc cupping, rim loss, haemorrhages",
+      "OCT and perimetry for RNFL and visual field status"
+    ],
+    "diagnosis_and_management": [
+      "Identify acute primary angle-closure glaucoma and differentiate from chronic open-angle glaucoma",
+      "Immediate management: pressure-lowering drops (timolol, brimonidine, dorzolamide), oral acetazolamide, pilocarpine after IOP drop, pred acetate, IV mannitol if refractory",
+      "Plan definitive management: LPI RE, prophylactic LPI LE, surgical options if control inadequate",
+      "Long-term management: fixed-combo drops, SLT, trabeculectomy/tube RE",
+      "Provide patient education and mydriatic avoidance advice"
+    ],
+    "infection_control": [
+      "Hand hygiene, PPE, and instrument cleaning during tonometry, gonioscopy, or LPI preparation"
+    ],
+    "documentation_and_handover": [
+      "Document IOP values, medications used, timing and doses",
+      "Record gonioscopy findings, cup-disc ratios, CCT, and HVF results",
+      "Handover plan for urgent LPI and systemic management"
+    ]
+  },
+  "notes": {
+    "HPI": "History of present illness",
+    "CCT": "Central corneal thickness",
+    "GH": "General health",
+    "FH": "Family history",
+    "SH": "Social history",
+    "VA": "Visual acuity",
+    "IOP": "Intraocular pressure",
+    "RNFL": "Retinal nerve fibre layer",
+    "HVF": "Humphrey visual field",
+    "LPI": "Laser peripheral iridotomy",
+    "OAG": "Open-angle glaucoma",
+    "PAC": "Primary angle closure"
+  },
+  "emotional_affect": "Acutely distressed and anxious, photophobic, nauseated, and pain-guarding. Expresses fear of imminent vision loss and guilt about inconsistent medication adherence. Alert and oriented but distracted by pain. Responds well to calm, brief explanations and clear management steps. No suicidal ideation disclosed."
+}
